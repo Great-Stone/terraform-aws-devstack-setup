@@ -4,6 +4,10 @@
 - Platform: AWS
 - OS: Ubuntu 22.04
 
+- References
+  - https://velog.io/@lijahong/0%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-Terraform-%EA%B3%B5%EB%B6%80-Terraform-OpenStack
+  - https://printf.kr/14
+
 ## How will we provide a `provider network`?
 
 A `provider network` is, in OpenStack terms, a network that is Internet-capable (usually with a public IP). This network provides a floating IP to OpenStack or a NAT IP for a virtual network.
