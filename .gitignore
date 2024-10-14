@@ -1,0 +1,9 @@
+.terraform*
+*.tfstate*
+
+# Generated files
+ssh_private
+
+# Rendered files
+script.sh
+local.conf
