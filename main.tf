@@ -151,7 +151,7 @@ resource "random_password" "password" {
 
 resource "local_file" "install_config" {
   content = templatefile("${path.module}/local.conf.tpl", {
-    public_ip = aws_instance.openstack.private_ip
+    public_ip = aws_instance.openstack.public_ip
     password  = random_password.password.result
   })
   filename = "${path.module}/local.conf"
@@ -159,7 +159,7 @@ resource "local_file" "install_config" {
 
 resource "local_file" "install_script" {
   content = templatefile("${path.module}/script.sh.tpl", {
-    public_ip        = aws_instance.openstack.private_ip
+    public_ip        = aws_instance.openstack.public_ip
     config_file_name = local_file.install_config.filename
   })
   filename = "${path.module}/script.sh"
