@@ -76,10 +76,19 @@ resource "aws_security_group_rule" "openstack_http" {
   security_group_id = aws_security_group.example.id
 }
 
-resource "aws_security_group_rule" "example_vault" {
+resource "aws_security_group_rule" "openstack_network" {
   type              = "ingress"
-  from_port         = 8200
-  to_port           = 8200
+  from_port         = 9696
+  to_port           = 9696
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.example.id
+}
+
+resource "aws_security_group_rule" "openstack_object_store" {
+  type              = "ingress"
+  from_port         = 8080
+  to_port           = 8080
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.example.id
